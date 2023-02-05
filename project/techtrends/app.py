@@ -70,7 +70,7 @@ def status():
 
 @app.route('/teapot/')
 def teapot():
-    app.logger.info('Successfully teapot endpoint - for learning about endpoints')
+    app.logger.info('Successful teapot endpoint - for learning about endpoints')
     return "Would you like some tea?", 418
 
 @app.route('/metrics/')
@@ -80,7 +80,7 @@ def metrics():
     connection = get_db_connection()
     connection.close()
     response = app.response_class(
-          response=json.dumps({"watch out! this is all hardcoded for now!!!": 999,
+          response=json.dumps({
                                "db_connection_count": db_connection_count,
                                "post_count": post_count}),
           status=200,
