@@ -1,17 +1,3 @@
-## Docker commands used to build the application 
-# the docker build command: (NB same dir as the Dockerfile)
-docker build -t techtrends .
-
-## Docker commands used to run the application
-docker run -d -p 7111:3111 techtrends
-
-## Docker commands used to get the application logs
-docker ps # to get the container id
-docker logs --since=40m d9334920ee3f
-
-## Logs from the container running the TechTrends application
-# pasted logs from the Docker container:
-
 INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
 INFO:app:Connected to database.db
 INFO:app:Main index.html loaded
@@ -53,4 +39,3 @@ INFO:app:Main index.html loaded
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[37mGET / HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-
