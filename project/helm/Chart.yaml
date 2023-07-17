@@ -1,0 +1,10 @@
+apiVersion: v1
+name: techtrends
+description: techtrends project
+keywords:
+- techtrends
+- sandbox
+version: 1.0.0
+maintainers:
+- name: naturallyunintelligent
+  email: darrengsteele@gmail.com
