@@ -29,13 +29,19 @@ spec:
           protocol: {{ .Values.service.protocol }}
 {{/*        {{- toYaml .Values.probes | indent 12}}*/}}
         probes:
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-        {{- toYaml .Values.resources | indent 12}}
-
+          - livenessProbe:
+              httpGet:
+                path: /healthz
+                port: 3111
+          - readinessProbe:
+              httpGet:
+                path: /healthz
+                port: 3111
+{{/*        {{- toYaml .Values.resources | indent 12}}*/}}
+        resources:
+          requests:
+            memory: 64Mi
+            cpu: 250m
+          limits:
+            memory: 128Mi
+            cpu: 500m
