@@ -27,7 +27,11 @@ containerPort: 3111
 livenessProbe:
   httpGet:
     path: /healthz
+    port: 3111
+  initialDelaySeconds: 15
 
 readinessProbe:
   httpGet:
     path: /healthz
+    port: 3111
+  initialDelaySeconds: 15
