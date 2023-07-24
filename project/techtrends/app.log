@@ -39,3 +39,13 @@ INFO:app:Main index.html loaded
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[37mGET / HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Feb/2023 10:14:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Connected to database.db
+INFO:app:Main index.html loaded
+INFO:werkzeug:127.0.0.1 - - [20/Jul/2023 16:26:20] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Jul/2023 16:26:20] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Jul/2023 16:26:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Connected to database.db
+INFO:app:get_post:1
+INFO:app:`Retrieved post:1
+INFO:werkzeug:127.0.0.1 - - [20/Jul/2023 16:35:25] "[37mGET /1 HTTP/1.1[0m" 200 -

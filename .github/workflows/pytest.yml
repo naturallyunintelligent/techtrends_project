@@ -4,7 +4,10 @@ name: Pytest
 ## Set the trigger policy.
 ## In this case, the workflow is execute on a `push` event,
 ## or when a new commit is pushed to the repository
-on: [push]
+on:
+#  [push]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 ## List the steps to be executed by the workflow
 jobs:
@@ -37,7 +40,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install  pytest 
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    ## Run all pytests by inovking the `pytest command`
+    ## Run all pytests by invoking the `pytest command`
     - name: Test with pytest
       run: |
         pytest
