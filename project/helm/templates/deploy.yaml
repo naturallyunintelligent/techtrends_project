@@ -27,6 +27,15 @@ spec:
         ports:
         - containerPort: {{ .Values.service.port }}
           protocol: {{ .Values.service.protocol }}
-        {{- toYaml .Values.probes | indent 12}}
+{{/*        {{- toYaml .Values.probes | indent 12}}*/}}
+        probes:
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3111
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3111
         {{- toYaml .Values.resources | indent 12}}
 
