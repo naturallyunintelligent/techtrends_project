@@ -27,7 +27,6 @@ spec:
         ports:
         - containerPort: {{ .Values.service.port }}
           protocol: {{ .Values.service.protocol }}
-        livenessProbe: {{ toYaml .Values.livenessProbe | indent 12}}
-        readinessProbe: {{ toYaml .Values.readinessProbe | indent 12}}
-        resources: {{ toYaml .Values.resources | indent 12}}
+        {{- toYaml .Values.probes | indent 12}}
+        {{- toYaml .Values.resources | indent 12}}
 
