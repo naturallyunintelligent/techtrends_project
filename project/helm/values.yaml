@@ -25,15 +25,11 @@ resources:
 containerPort: 3111
 
 livenessProbe:
-  httpGet:
-    path: /healthz
-    ports:
-    - containerPort: 3111
-  initialDelaySeconds: 15
+  - httpGet:
+      path: /healthz
+      port: 3111
 
 readinessProbe:
-  httpGet:
-    path: /healthz
-    ports:
-    - containerPort: 3111
-  initialDelaySeconds: 15
+  - httpGet:
+      path: /healthz
+      port: 3111
