@@ -27,6 +27,24 @@ spec:
         ports:
         - containerPort: {{ .Values.service.port }}
           protocol: {{ .Values.service.protocol }}
-        {{- toYaml .Values.probes | indent 12}}
-        {{- toYaml .Values.resources | indent 12}}
+        probes:
+          - livenessProbe:
+              httpGet:
+                path: {{ .Values.probes.path }}
+                port: {{ .Values.probes.port }}
+          - readinessProbe:
+              httpGet:
+                path: {{ .Values.probes.path }}
+                port: {{ .Values.probes.port }}
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            CPU: {{ .Values.resources.requests.CPU }}
+          limits:
+            memory: {{ .Values.resources.limits.CPU }}
+            CPU: {{ .Values.resources.limits.CPU }}
+
+
+
+
 
