@@ -39,10 +39,10 @@ spec:
         resources:
           requests:
             memory: {{ .Values.resources.requests.memory }}
-            CPU: {{ .Values.resources.requests.CPU }}
+            cpu: {{ .Values.resources.requests.cpu }}
           limits:
-            memory: {{ .Values.resources.limits.CPU }}
-            CPU: {{ .Values.resources.limits.CPU }}
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
 
 
 
