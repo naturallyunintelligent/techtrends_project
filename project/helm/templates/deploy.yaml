@@ -27,15 +27,6 @@ spec:
         ports:
         - containerPort: {{ .Values.service.port }}
           protocol: {{ .Values.service.protocol }}
-        probes:
-          - livenessProbe:
-              httpGet:
-                path: {{ .Values.probes.livenessProbe.path }}
-                port: {{ .Values.probes.livenessProbe.port }}
-          - readinessProbe:
-              httpGet:
-                path: {{ .Values.probes.readinessProbe.path }}
-                port: {{ .Values.probes.readinessProbe.port }}
         resources:
           requests:
             memory: {{ .Values.resources.requests.memory }}
