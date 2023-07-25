@@ -59,6 +59,16 @@ def about():
 
 @app.route('/healthz/')
 def status():
+    try:
+        connection = get_db_connection()
+    except:
+        response = app.response_class(
+            response=json.dumps({"result": "db failure"}),
+            status=500,
+            mimetype='application/json'
+        )
+        app.logger.info('db did not connect')
+        app.logger.debug('Can return some useful debug info here')
     response = app.response_class(
               response=json.dumps({"result":"OK - healthy"}),
               status=200,
