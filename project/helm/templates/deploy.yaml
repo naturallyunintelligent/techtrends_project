@@ -34,8 +34,10 @@ spec:
           limits:
             memory: {{ .Values.resources.limits.memory }}
             cpu: {{ .Values.resources.limits.cpu }}
-
-
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.livenessProbe.port }}
 
 
 
