@@ -4,7 +4,7 @@ import logging
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
-post_count = 0
+post_count = 6
 db_connection_count = 0
 
 # Function to get a database connection.
