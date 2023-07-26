@@ -2,6 +2,7 @@ import sqlite3
 
 connection = sqlite3.connect('database.db')
 
+#print(connection.total_changes)
 
 with open('schema.sql') as f:
     connection.executescript(f.read())
@@ -31,6 +32,7 @@ cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
 cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
             ('Kubernetes Certification', 'CNCF, along with the Linux Foundation, have created certification programs for Kubernetes as well as training for CNCF projects Prometheus and Fluentd.')
             )
-
+#print(connection.total_changes)
 connection.commit()
+#print(connection.total_changes)
 connection.close()

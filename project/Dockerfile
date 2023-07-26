@@ -13,6 +13,7 @@ RUN pip install -r requirements.txt
 EXPOSE 3111
 
 #Ensure that the database is initialized with the pre-defined posts in the init_db.py file:
+RUN python init_db.py
+
 # The application should execute at the container start:
-CMD [ "python", "init_db.py" ]
 CMD [ "python", "app.py" ]
